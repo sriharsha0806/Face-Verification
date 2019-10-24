@@ -40,7 +40,7 @@ These two kinds of networks used when labels are very few and for comparing posi
  
  * **Hard Triplets**: d(r<sub>a</sub>, r<sub>n</sub>) < d(r<sub>a</sub>, r<sub>p</sub>). The negativee sample is closer to the anchor than the positive. The loss is positive(and greater than m).
  
- * **Semi-Hard Triplets**: rd(<sub>a</sub>, r<sub>p</sub>) < rd(<sub>a</sub>, r<sub>n</sub>) < d(r<sub>a</sub>, r<sub>p</sub>) + m. The negative sample is more distant to the anchor than the positive, but the distance is not greater than the margin, so the loss is still positive (amd smaller than m).
+ * **Semi-Hard Triplets**: d(r<sub>a</sub>, r<sub>p</sub>) < d(r<sub>a</sub>, r<sub>n</sub>) < d(r<sub>a</sub>, r<sub>p</sub>) + m. The negative sample is more distant to the anchor than the positive, but the distance is not greater than the margin, so the loss is still positive (amd smaller than m).
  
  ![](Img/triplets_negatives.png)
  
