@@ -36,7 +36,7 @@ These two kinds of networks used when labels are very few and for comparing posi
  
  ![](Img/triplet_loss_faces.png)
  
- * **Easy Triplets**: d(<sub>r_a</sub>, <sub>r_n</sub>) > d($r_a$, $r_p$) + m. The negative sample is already sufficiently distant to the anchor sample respect to the positive sample in the mebedding space. The loss is 0 and the net parameters are not produced.
+ * **Easy Triplets**: d(r<sub>a</sub>, r<sub>n</sub>) > d($r_a$, $r_p$) + m. The negative sample is already sufficiently distant to the anchor sample respect to the positive sample in the mebedding space. The loss is 0 and the net parameters are not produced.
  
  * **Hard Triplets**: d($r_a$, $r_n$) < d($r_a$, $r_p$). The negativee sample is closer to the anchor than the positive. The loss is positive(and greater than m).
  
