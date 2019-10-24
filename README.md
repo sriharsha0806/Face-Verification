@@ -14,7 +14,7 @@ The images with multiple faces or no faces in the dataset are not considered for
 ![](Img/dataset_dist.png)
 
 # Why Neural Networks?
- Face space has a manifold structure on pixel space(by manifold hypothesis), which can be adequately captured by linear transformations(Hu, Lu, and Tan 2014). So I am using neural networks to learn the function for facial verification.
+ Face space has a manifold structure on pixel space(by manifold hypothesis), which cannot be adequately captured by linear transformations(Hu, Lu, and Tan 2014). So I am using neural networks to learn the function for facial verification.
  
  
  # Siamese Nets, Triplet Nets
@@ -32,15 +32,15 @@ These two kinds of networks used when labels are very few and for comparing posi
  ![](gif.gif)
  
  ## Triplet Loss
- The objective is to learn the distance between the anchor sample and the negative sample represetations d($r_a, r_n$) is greater than margin m) than the distance between the anchor and positive representation d($r_a, r_p$)
+ The objective is to learn the distance between the anchor sample and the negative sample represetations d($r_a$, $r_n$) is greater than margin m) than the distance between the anchor and positive representation d($r_a$, $r_p$)
  
  ![](Img/triplet_loss_faces.png)
  
- * **Easy Triplets**: $d(r_a, r_n) > d(r_a, r_p) + m$. The negative sample is already sufficiently distant to the anchor sample respect to the positive sample in the mebedding space. The loss is 0 and the net parameters are not produced.
+ * **Easy Triplets**: d($r_a$, $r_n$) > d($r_a$, $r_p$) + m. The negative sample is already sufficiently distant to the anchor sample respect to the positive sample in the mebedding space. The loss is 0 and the net parameters are not produced.
  
- * **Hard Triplets**: $d(r_a, r_n) < d(r_a, r_p)$. The negativee sample is closer to the anchor than the positive. The loss is positive(and greater than m).
+ * **Hard Triplets**: d($r_a$, $r_n$) < d($r_a$, $r_p$). The negativee sample is closer to the anchor than the positive. The loss is positive(and greater than m).
  
- * **Semi-Hard Triplets**: $ d(r_a, r_p) < d(r_a, r_n) < d(r_a, r_p) + m$. The negative sample is more distant to the anchor than the positive, but the distance is not greater than the margin, so the loss is still positive (amd smaller than m).
+ * **Semi-Hard Triplets**: d($r_a$, $r_p$) < d($r_a$, $r_n$) < d($r_a$, $r_p$) + m. The negative sample is more distant to the anchor than the positive, but the distance is not greater than the margin, so the loss is still positive (amd smaller than m).
  
  ![](Img/triplets_negatives.png)
  
