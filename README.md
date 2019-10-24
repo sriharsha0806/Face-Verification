@@ -32,15 +32,15 @@ These two kinds of networks used when labels are very few and for comparing posi
  ![](gif.gif)
  
  ## Triplet Loss
- The objective is to learn the distance between the anchor sample and the negative sample represetations d($r_a$, $r_n$) is greater than margin m) than the distance between the anchor and positive representation d($r_a$, $r_p$)
+ The objective is to learn the distance between the anchor sample and the negative sample represetations d(<sub>r_a</sub>, <sub>r_n</sub>) is greater than margin m) than the distance between the anchor and positive representation d(<sub>r_a</sub>, <sub>r_p</sub>)
  
  ![](Img/triplet_loss_faces.png)
  
- * **Easy Triplets**: d(r<sub>a</sub>, r<sub>n</sub>) > d($r_a$, $r_p$) + m. The negative sample is already sufficiently distant to the anchor sample respect to the positive sample in the mebedding space. The loss is 0 and the net parameters are not produced.
+ * **Easy Triplets**: d(r<sub>a</sub>, r<sub>n</sub>) > d(r<sub>a</sub>, <sub>r_p</sub>) + m. The negative sample is already sufficiently distant to the anchor sample respect to the positive sample in the mebedding space. The loss is 0 and the net parameters are not produced.
  
- * **Hard Triplets**: d($r_a$, $r_n$) < d($r_a$, $r_p$). The negativee sample is closer to the anchor than the positive. The loss is positive(and greater than m).
+ * **Hard Triplets**: d(<sub>r_a</sub>, <sub>r_n</sub>) < d(<sub>r_a</sub>, <sub>r_p</sub>). The negativee sample is closer to the anchor than the positive. The loss is positive(and greater than m).
  
- * **Semi-Hard Triplets**: d($r_a$, $r_p$) < d($r_a$, $r_n$) < d($r_a$, $r_p$) + m. The negative sample is more distant to the anchor than the positive, but the distance is not greater than the margin, so the loss is still positive (amd smaller than m).
+ * **Semi-Hard Triplets**: d(<sub>r_a</sub>, <sub>r_p</sub>) < d(<sub>r_a</sub>, <sub>r_n</sub>) < d(<sub>r_a</sub>, <sub>r_p</sub>) + m. The negative sample is more distant to the anchor than the positive, but the distance is not greater than the margin, so the loss is still positive (amd smaller than m).
  
  ![](Img/triplets_negatives.png)
  
