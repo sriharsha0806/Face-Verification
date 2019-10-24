@@ -1,5 +1,5 @@
 # Face-Verification
-This repository about the implementation of Deep Neural network model used for face verification. The dataset used for this task is IMDB-WIKI-face images Dataset. 
+This repository about the implementation of Siamese Neural network model used for face verification. The dataset used for this task is IMDB-WIKI-face images Dataset. 
 
 [Link](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/)
 
