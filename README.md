@@ -6,8 +6,12 @@ This repository about the implementation of Deep Neural network model used for f
 The dataset consists of 5,23,051 face images of 20,284 celebrities(4,60,273 imdb and rest from wiki)
 The images with multiple faces or no faces in the dataset are not considered for the task.
 
+![](imdb-wiki-teaser.png)
+
 # Challenges:
-* The celebrities facial images are taken at multiple poses and their age vary across the images(multi-modal)
+* The celebrities facial images are taken at multiple poses and their age vary across the images(multi-modal) compared to other face verification datasets.
+
+![](dataset_dist.png)
 
 # Why Neural Networks?
  Face space has a manifold structure on pixel space(by manifold hypothesis), which can be adequately captured by linear transformations(Hu, Lu, and Tan 2014). So I am using neural networks to learn the function for facial verification.
