@@ -6,7 +6,7 @@ This repository about the implementation of Siamese Neural network model used fo
 The dataset consists of 5,23,051 face images of 20,284 celebrities(4,60,273 imdb and rest from wiki)
 The images with multiple faces or no faces in the dataset are not considered for the task.
 
-[](imdb-wiki-teaser.png)
+![](img/imdb-wiki-teaser.png)
 
 # Challenges:
 * The celebrities facial images are taken at multiple poses and their age vary across the images(multi-modal) compared to other face verification datasets.
