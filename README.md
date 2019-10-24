@@ -11,7 +11,7 @@ The images with multiple faces or no faces in the dataset are not considered for
 # Challenges:
 * The celebrities facial images are taken at multiple poses and their age vary across the images(multi-modal) compared to other face verification datasets.
 
-![](dataset_dist.png)
+![](Img/dataset_dist.png)
 
 # Why Neural Networks?
  Face space has a manifold structure on pixel space(by manifold hypothesis), which can be adequately captured by linear transformations(Hu, Lu, and Tan 2014). So I am using neural networks to learn the function for facial verification.
@@ -25,7 +25,7 @@ These two kinds of networks used when labels are very few and for comparing posi
  # Loss
  ## Pairwise Ranking Loss(Contrastive loss)
  The objective is to learn representations with a small distance d between them for positive pairs and greater distance than some margin value m for negative pairs.
- ![](pairwise_ranking_loss_faces.png)
+ ![](Img/pairwise_ranking_loss_faces.png)
  
  The function of the margin is that, when the representations are produced for a negative pair are distant enough, no efforts are wasted on enlarging that distance, so further training can focus on more difficult pairs.
  
@@ -34,7 +34,7 @@ These two kinds of networks used when labels are very few and for comparing posi
  ## Triplet Loss
  The objective is to learn the distance between the anchor sample and the negative sample represetations d($r_a, r_n$) is greater than margin m) than the distance between the anchor and positive representation d($r_a, r_p$)
  
- ![](triplet_loss_faces.png)
+ ![](Img/triplet_loss_faces.png)
  
  * **Easy Triplets**: $d(r_a, r_n) > d(r_a, r_p) + m$. The negative sample is already sufficiently distant to the anchor sample respect to the positive sample in the mebedding space. The loss is 0 and the net parameters are not produced.
  
@@ -42,7 +42,7 @@ These two kinds of networks used when labels are very few and for comparing posi
  
  * **Semi-Hard Triplets**: $ d(r_a, r_p) < d(r_a, r_n) < d(r_a, r_p) + m$. The negative sample is more distant to the anchor than the positive, but the distance is not greater than the margin, so the loss is still positive (amd smaller than m).
  
- ![](triplets_negatives.png)
+ ![](Img/triplets_negatives.png)
  
  
  
