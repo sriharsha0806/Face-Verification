@@ -11,13 +11,13 @@ The images with multiple faces or no faces in the dataset are not considered for
 # Challenges:
 * The celebrities facial images are taken at multiple poses and their age vary across the images(multi-modal) compared to other face verification datasets.
 
+![](Img/dataset_dist.png)
+
 # Running the Experiment
 * Clone the repository
 * Download the datasets into this repo
 * Extract them
 * Run mat.py and Run Train.py
-
-![](Img/dataset_dist.png)
 
 # Why Neural Networks?
  Face space has a manifold structure on pixel space(by manifold hypothesis), which cannot be adequately captured by linear transformations(Hu, Lu, and Tan 2014). So I am using neural networks to learn the function for facial verification.
