@@ -11,6 +11,12 @@ The images with multiple faces or no faces in the dataset are not considered for
 # Challenges:
 * The celebrities facial images are taken at multiple poses and their age vary across the images(multi-modal) compared to other face verification datasets.
 
+# Running the Experiment
+* Clone the repository
+* Download the datasets into this repo
+* Extract them
+* Run mat.py and Run Train.py
+
 ![](Img/dataset_dist.png)
 
 # Why Neural Networks?
