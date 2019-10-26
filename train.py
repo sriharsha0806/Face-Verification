@@ -135,8 +135,8 @@ def main(csv_file):
     iteration_number= 0
 
     for epoch in range(0,Config.number_epochs):
-        for i, data in enumerate(train_dataloader,0):
-            img0, img1 , label = data
+        for i, data_i in enumerate(train_dataloader,0):
+            img0, img1 , label = data_i
             img0, img1 , label = img0.to(device), img1.to(device) , label.to(device)
             optimizer.zero_grad()
             output1,output2 = net(img0,img1)
