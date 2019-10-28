@@ -55,5 +55,7 @@ These two kinds of networks used when labels are very few and for comparing posi
  ![](Img/gif1.gif)
  ![](Img/triplets_negatives.png)
  
- 
+ # References:
+ 1. https://gombru.github.io/2019/04/03/ranking_loss/
+ 2. https://hackernoon.com/facial-similarity-with-siamese-networks-in-pytorch-9642aa9db2f7
  
