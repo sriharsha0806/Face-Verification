@@ -13,6 +13,13 @@ The images with multiple faces or no faces in the dataset are not considered for
 
 ![](Img/dataset_dist.png)
 
+# Results
+![](Img/Figure_1.png)
+
+![](Img/Figure_2.png)
+
+![](Img/Figure_3.png)
+
 # Running the Experiment
 * Clone the repository
 * Download the datasets into this repo
