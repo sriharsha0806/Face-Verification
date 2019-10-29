@@ -7,6 +7,7 @@ from PIL import Image, ImageDraw
 from skimage import io, transform
 import numpy as np
 import pickle
+
 #import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
@@ -111,6 +112,7 @@ def main(csv_file):
     siamese_dataset = SiameseNetworkDataset(csv_file='meta.csv',
                                        transform = transforms.Compose(
                                        [transforms.Resize((224,224)),
+                                       transforms.RandomHorizontalFlip(),
                                        transforms.ToTensor()]))                        
                                                                              
     validation_split = 0.8
@@ -124,8 +126,8 @@ def main(csv_file):
                         num_workers=Config.number_of_workers,
                         batch_size=Config.batch_size)
 
-    #device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    device = torch.device("cpu")
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    #device = torch.device("cpu")
     net = SiameseNetwork().to(device)
     criterion = ContrastiveLoss()
     optimizer = optim.Adam(net.parameters(),lr = 0.0005 )
@@ -143,14 +145,17 @@ def main(csv_file):
             loss_contrastive = criterion(output1,output2,label)
             loss_contrastive.backward()
             optimizer.step()
-            if i %10 == 0 :
+            if i %100 == 0 :
                 print("Epoch number {}\n Current loss {}\n".format(epoch,loss_contrastive.item()))
-                iteration_number += 10
+                iteration_number += 100
                 counter.append(iteration_number)
                 loss_history.append(loss_contrastive.item())
             # Condition to break each epoch
-            if i > data.shape[0]: 
+            
+            if i > data.shape[0]//Config.batch_size:#data.shape[0]: 
                 break
+            
+
     #save_plot(counter,loss_history)
     # save variables so they can be plotted later
     with open('objs.pkl', 'wb') as f:
@@ -159,7 +164,7 @@ def main(csv_file):
     print("Training Completed")
 
     # Save the model
-    torch.save(net, '.')
+    torch.save(net, 'filename.pt')
     
     print("Model is saved")
 

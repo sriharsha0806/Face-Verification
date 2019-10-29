@@ -13,6 +13,13 @@ The images with multiple faces or no faces in the dataset are not considered for
 
 ![](Img/dataset_dist.png)
 
+# Running the Experiment
+* Clone the repository
+* Download the datasets into this repo
+* Extract them
+* Run mat.py and Run Train.py
+* for comparing two images for face verification, run visualize.py
+
 # Why Neural Networks?
  Face space has a manifold structure on pixel space(by manifold hypothesis), which cannot be adequately captured by linear transformations(Hu, Lu, and Tan 2014). So I am using neural networks to learn the function for facial verification.
  
@@ -41,8 +48,14 @@ These two kinds of networks used when labels are very few and for comparing posi
  * **Hard Triplets**: d(r<sub>a</sub>, r<sub>n</sub>) < d(r<sub>a</sub>, r<sub>p</sub>). The negativee sample is closer to the anchor than the positive. The loss is positive(and greater than m).
  
  * **Semi-Hard Triplets**: d(r<sub>a</sub>, r<sub>p</sub>) < d(r<sub>a</sub>, r<sub>n</sub>) < d(r<sub>a</sub>, r<sub>p</sub>) + m. The negative sample is more distant to the anchor than the positive, but the distance is not greater than the margin, so the loss is still positive (amd smaller than m).
+ 
+ 
+ 
+ 
  ![](Img/gif1.gif)
  ![](Img/triplets_negatives.png)
  
- 
+ # References:
+ 1. https://gombru.github.io/2019/04/03/ranking_loss/
+ 2. https://hackernoon.com/facial-similarity-with-siamese-networks-in-pytorch-9642aa9db2f7
  
