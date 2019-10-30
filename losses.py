@@ -9,7 +9,7 @@ class ContrastiveLoss(nn.Module):
     """
     def __init__(self):
         super(ContrastiveLoss, self).__init__()
-        self.margin = 2.0#margin
+        self.margin = 5.0#margin
         self.eps = 1e-9
 
     def forward(self, output1, output2, target, size_average=True):
